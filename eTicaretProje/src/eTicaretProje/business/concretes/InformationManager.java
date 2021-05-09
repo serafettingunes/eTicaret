@@ -36,40 +36,42 @@ public class InformationManager implements InformationService {
 
 	Scanner in = new Scanner(System.in);
 
-	
-	
-	String[]emailGelen=new String[2];
+	String[] emailGelen = new String[2];
+
 	@Override
 	public void kayitOl(Information information) {
-	x=(int) information.get_a(); 
-		
-		if (x == information.get_a()) {
+		x = (int) information.get_a();
+
+		if (1 == information.get_a()) {
 			for (int i = 0; i < information.get_a(); i++) {
-				
-				
-				
-				
-				
-				
-				//System.out.println(emailGelen[i]);
-				
-				sart=true;
+
+				// System.out.println(emailGelen[i]);
+
+				sart = true;
 			}
 
-		} else if (x > information.get_a()) {
-			for (int i = 0; i < information.get_a(); i++) {
-				sart=true;
-				emailGelen=information.getEmailY();
-				if (emailGelen[i]==information.get_ePosta()) {
-					sart=true;
+		} else if (2 >= information.get_a()) {
+			emailGelen = information.getEmailY();
+
+			for (int i = 0; i < emailGelen.length; i++) {
+				for (int j = 0; j < emailGelen.length; j++) {
+					if (emailGelen[i] == emailGelen[j]) {
+						sart = false;
+						System.out.println("Eposta ayný olamaz!!!");
+						break;
+					} else {
+						sart = true;
+
+					}
+				}
+				if (sart==false) {
 					break;
 				}
+
 			}
 
-			
 		}
 
-		
 		// System.out.println(emailX);
 
 		if (information.get_ad().length() >= 2 && information.get_soyad().length() >= 2 && sart == true
@@ -77,12 +79,10 @@ public class InformationManager implements InformationService {
 
 			System.out.print("Doðrulama linkine týklamak için 1  yazýnýz : ");
 
-		tikla = Integer.parseInt(in.nextLine());
+			tikla = Integer.parseInt(in.nextLine());
 			if (tikla == 1) {
 				System.out.println("Kaydýnýz baþarýyla oluþturulmuþtur...");
 				this._googleInterface.kayitOl(information.get_ad());
-				
-				
 
 			} else {
 				System.out.println("Yanlýþ oldu!!!");
@@ -96,11 +96,8 @@ public class InformationManager implements InformationService {
 
 	@Override
 	public void girisYap(Information information) {
-		
 
 	}
-
-	
 
 	public static final Pattern regexim = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",
 			Pattern.CASE_INSENSITIVE);

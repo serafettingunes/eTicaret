@@ -14,6 +14,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		int a = 1;
+		int sabit=1;
 		Scanner in = new Scanner(System.in);
 		String ad;
 		String soyad;
@@ -35,7 +36,7 @@ public class Main {
 			dizi[i-1]=email;
 			
 			InformationService informationService=new InformationManager(new GoogleEntegrasyon());
-			Information information=new Information(ad, soyad, email, parola, a,dizi);
+			Information information=new Information(ad, soyad, email, parola, a,dizi,sabit);
 			
 			
 				
