@@ -97,9 +97,21 @@ public class InformationManager implements InformationService {
 
 	}
 
+	String[] parolaGelen=new String[2];
 	@Override
 	public void girisYap(Information information) {
-
+			
+		emailGelen = information.getEmailY();
+		parolaGelen=information.get_parolaY();
+		
+		for (int i = 0; i < emailGelen.length; i++) {
+			if (emailGelen[i].equals(information.get_ePosta())&& parolaGelen[i].equals(information.get_parola())) {
+				System.out.println( " Giriþ Baþarýlý...");
+				break;
+			}
+			
+			
+		}
 	}
 
 	public static final Pattern regexim = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$",

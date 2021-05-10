@@ -8,11 +8,17 @@ public class Information implements InformationInterface {
 	private String _ePosta;
 	private String _parola;
 	private int _a;
-	
-
-	
 
 	private String[] _emailY;
+	private String[] _parolaY;
+
+	public String[] get_parolaY() {
+		return _parolaY;
+	}
+
+	public void set_parolaY(String[] _parolaY) {
+		this._parolaY = _parolaY;
+	}
 
 	public String[] getEmailY() {
 		return _emailY;
@@ -30,7 +36,7 @@ public class Information implements InformationInterface {
 		this._a = _a;
 	}
 
-	public Information(String ad, String soyad, String ePosta, String parola, int a, String[] emailY ) {
+	public Information(String ad, String soyad, String ePosta, String parola, int a, String[] emailY,String[] parolaY) {
 		super();
 		this._ad = ad;
 		this._soyad = soyad;
@@ -38,7 +44,8 @@ public class Information implements InformationInterface {
 		this._parola = parola;
 		this._a = a;
 		this._emailY = emailY;
-	
+		this._parolaY=parolaY;
+
 	}
 
 	public String get_ad() {
