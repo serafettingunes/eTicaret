@@ -1,6 +1,7 @@
 package eTicaretProje.business.concretes;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -37,6 +38,8 @@ public class InformationManager implements InformationService {
 	Scanner in = new Scanner(System.in);
 
 	String[] emailGelen = new String[2];
+	String email1;
+	String email2;
 
 	@Override
 	public void kayitOl(Information information) {
@@ -53,21 +56,21 @@ public class InformationManager implements InformationService {
 		} else if (2 >= information.get_a()) {
 			emailGelen = information.getEmailY();
 
-			for (int i = 0; i < emailGelen.length; i++) {
-				for (int j = 0; j < emailGelen.length; j++) {
-					if (emailGelen[i] == emailGelen[j]) {
-						sart = false;
-						System.out.println("Eposta ayný olamaz!!!");
-						break;
-					} else {
-						sart = true;
+			Arrays.sort(emailGelen);
+			int sayac1 = 0;
+			int sayac2 = 1;
 
-					}
-				}
-				if (sart==false) {
-					break;
-				}
+			email1 = emailGelen[sayac1].toString();
+			email2 = emailGelen[sayac2].toString();
 
+			if (email1.equals(email2)) {
+				System.out.println("E-Posta ayný olamaz!!!");
+				sart = false;
+
+			} else 
+
+			{
+				sart = true;
 			}
 
 		}
